@@ -1,35 +1,21 @@
-candidates_list = [2, 3, 4, 6, 7]
-target = 8
+candidates = [2, 3, 6, 7]
+target = 7
 answer_list = []
 
-# Output = [[2, 2, 3], [7]]
+def backtrack(remain, stack, start_index):
+    if remain == 0:
+        answer_list.append(list(stack))
+        return
+    
+    if remain < 0:
+        return
 
-for index, _ in enumerate(candidates_list):
-    temp_list = []
-    sum = 0
-    while sum < target:
-        sum = sum + candidates_list[index]
+    for i in range(start_index, len(candidates)):
+        stack.append(candidates[i])
+        
+        backtrack(remain - candidates[i], stack, i)
+        
+        stack.pop()
 
-    if sum == target:
-        j = 0
-        while j != (target / candidates_list[index]):
-            temp_list.append(candidates_list[index])
-            j += 1
-            
-    if temp_list != []:
-        answer_list.append(temp_list)
-
-    # Different numbers
-    temp_list = []
-    sum = 0
-    while sum < target:
-        sum = sum + candidates_list[index]
-        rest = target - sum
-        for candidate in candidates_list:
-            if candidate == rest:
-                temp_list.append(candidate)
-        if temp_list != []: answer_list.append(temp_list)
-
-
-
-print(answer_list)
+backtrack(target, [], 0)
+print(answer_list) 

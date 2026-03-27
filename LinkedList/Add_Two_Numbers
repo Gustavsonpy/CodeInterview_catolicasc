@@ -1,0 +1,55 @@
+function ListNode(val, next = null) {
+  this.val = val;
+  this.next = next;
+}
+
+function addTwoNumbers(l1, l2) {
+  let dummy = new ListNode(0);
+  let current = dummy;
+  let carry = 0;
+
+  while (l1 !== null || l2 !== null || carry !== 0) {
+    let val1 = l1 ? l1.val : 0;
+    let val2 = l2 ? l2.val : 0;
+
+    let soma = val1 + val2 + carry;
+
+    carry = Math.floor(soma / 10);
+    current.next = new ListNode(soma % 10);
+
+    current = current.next;
+
+    if (l1) l1 = l1.next;
+    if (l2) l2 = l2.next;
+  }
+
+  return dummy.next;
+}
+
+function criarLista(arr) {
+  let dummy = new ListNode(0);
+  let current = dummy;
+
+  for (let num of arr) {
+    current.next = new ListNode(num);
+    current = current.next;
+  }
+
+  return dummy.next;
+}
+
+function imprimirLista(head) {
+  let resultado = [];
+  while (head !== null) {
+    resultado.push(head.val);
+    head = head.next;
+  }
+  console.log(resultado);
+}
+
+let l1 = criarLista([2, 4, 3]);
+let l2 = criarLista([5, 6, 4]);
+
+let resultado = addTwoNumbers(l1, l2);
+
+imprimirLista(resultado); 

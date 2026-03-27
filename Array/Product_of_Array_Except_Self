@@ -1,0 +1,18 @@
+var productExceptSelf = function(nums) {
+    let numero = nums.length
+    let resposta = new Array(numero).fill(1);
+
+    let esquerda = 1;
+    for (let i = 0; i < numero; i++) {
+        resposta[i] = esquerda;
+        esquerda *= nums[i];
+    }
+
+    let direita = 1;
+    for (let i = numero - 1; i >=0; i--){
+        resposta[i] *= direita
+        direita *= nums[i];
+    }
+    return resposta;
+}
+console.log(productExceptSelf([1,2,3,4]));

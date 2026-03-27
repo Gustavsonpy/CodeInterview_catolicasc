@@ -4,7 +4,8 @@ public class LinkedListCycle {
 
     public static class ListNode {
         int value;
-        ListNode next;
+        public ListNode next;
+        public Integer val;
         
         ListNode(int x) {
           value = x;

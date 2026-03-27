@@ -38,6 +38,7 @@ print(minStack.top())  # esperado: 0
 print(minStack.getMin())  # esperado: -2
 
 ## TEST 02
+# Valores decrescentes
 print('Teste 02:')
 minStack = MinStack()
 

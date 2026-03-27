@@ -22,6 +22,7 @@ class ListNode(object):
         self.next = next
 
 # Print da lista original: 1, 2, 3, 4, 5
+print('Teste 01:')
 head = ListNode(1,
         ListNode(2,
         ListNode(3,
@@ -44,6 +45,7 @@ print(', '.join(result))
 
 ## TEST 02
 # Print da lista original: 1, 1, 2, 3, 4, 4, 5
+print('Teste 02:')
 head = ListNode(1,
         ListNode(1,
         ListNode(2,

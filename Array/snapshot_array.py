@@ -26,7 +26,7 @@ class SnapshotArray(object):
 
         return arr[i][1]
 
-# TEST 01
+## TEST 01
 snapshotArr = SnapshotArray(3)
 
 snapshotArr.set(0, 5)
@@ -38,7 +38,7 @@ resultado = snapshotArr.get(0, snap_id)
 
 print('Teste 01:', resultado)  # esperado: 5
 
-# TEST 02
+## TEST 02
 snapshotArr = SnapshotArray(3)
 
 snapshotArr.set(0, 5)

@@ -10,7 +10,6 @@ public class EvenAndOdd {
         LinkedList<Integer> pares = new LinkedList<>();
         LinkedList<Integer> impares = new LinkedList<>();
 
-        // Leitura e separação
         for (int i = 0; i < N; i++) {
             int num = sc.nextInt();
 
@@ -21,11 +20,9 @@ public class EvenAndOdd {
             }
         }
 
-        // Ordenação
-        Collections.sort(pares); // crescente
-        Collections.sort(impares, Collections.reverseOrder()); // decrescente
+        Collections.sort(pares);
+        Collections.sort(impares, Collections.reverseOrder());
 
-        // Impressão
         for (int num : pares) {
             System.out.println(num);
         }

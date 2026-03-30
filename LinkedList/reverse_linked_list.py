@@ -1,6 +1,6 @@
 # prev -> Nó anterior
 # curr -> Nó atual
-# next_step -> Guarda o próximo antes de perder a referência
+# next_step -> Guarda o próximo valor antes de perder a referência
 
 class Solution(object):
     def reverseList(self, head):
